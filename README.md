@@ -32,6 +32,7 @@ It's time to DevelUp!
 ## [noSQL] Data Model Diagram
 
 ![and RD](DevelUp-ERD.png)
+***CLIENT***
 
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
@@ -44,16 +45,19 @@ It's time to DevelUp!
 | GET | `/category/index` | page that shows all decks in the database |
 | GET | `/logout` | allows the user to log out, then redirects back to `GET /` |
 | GET | `/category/:id` | page that shows a specific category where users can choose a deck|
-| PUT | `/category/:id/post` | user can favorite a deck and the user always stays on `GET /category/:id` |
-| DELETE | `/category/:id/` | user can delete a favorite, the user always stays on `GET /category/:id` |
-| POST | `/category/:id/post` | creates a deck, the user always stays on `GET /category/:id` |
 | PUT | `/category/:id/` | user can update a deck card and the user always stays on `GET /category/:id` |
 | DELETE | `/category/:id/` | user can delete all of their Cards, the user always stays on `GET /category/:id` |
+| GET | `/category/:id/create-deck/:id` | page that shows a specific category where users can create a deck|
+| POST | `/category/:id/create-deck/post` | creates a deck and goes to  `GET /category/:id/create-deck/:id` |
+| PUT | `/category/:id/create-deck/:id` | user can create a deck and the user goes to `GET /category/:id/create-deck/:id` |
+| DELETE | `/category/:id/create-deck/:id` | user can delete their created deck from `GET /category/:id/create-deck/:id` |
 
 
 **** Stretch Goals ****
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
+| PUT | `/category/:id/post` | user can favorite a deck and the user always stays on `GET /category/:id` |
+| DELETE | `/category/:id/` | user can delete a favorite, the user always stays on `GET /category/:id` |
 | GET | `/category/:id/Card/:id` | page that shows a specific category where users can choose a card|
 | POST | `/category/:id/Card:id` | creates a card, the user always stays on `GET /category/:id` |
 | PUT | `/category/:id/Card` | user can update a card and the user always stays on `GET /category/:id` |
